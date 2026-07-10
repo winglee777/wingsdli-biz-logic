@@ -191,44 +191,45 @@ a:hover{border-color:var(--accent);}
 .foot-name span{color:var(--accent);}
 .foot-meta{font-size:11px;color:var(--dim);letter-spacing:1px;}
 
-/* 顶部作者署名条 */
-.byline{
-  display:flex;align-items:center;justify-content:flex-end;gap:10px;
-  padding:16px 0 0;
-  font-size:11px;color:var(--dim);letter-spacing:2px;
+/* Hero 内作者署名（小标题） */
+.hero-author{
+  display:inline-flex;align-items:center;gap:10px;
+  margin:0 0 14px;
+  padding:6px 14px;
+  background:linear-gradient(90deg,rgba(41,107,239,.08),rgba(139,92,246,.08));
+  border:1px solid rgba(41,107,239,.2);
+  border-radius:22px;
 }
-.byline .by-tag{
+.hero-author .by-tag{
   display:inline-flex;align-items:center;gap:6px;
-  padding:5px 12px;
-  background:linear-gradient(90deg,rgba(41,107,239,.06),rgba(139,92,246,.06));
-  border:1px solid rgba(41,107,239,.15);
-  border-radius:20px;
-  font-size:11px;font-weight:600;color:var(--accent);
-  letter-spacing:1px;
+  font-size:11px;font-weight:700;color:var(--accent);
+  letter-spacing:2px;
 }
-.byline .by-tag .by-dot{
+.hero-author .by-tag .by-dot{
   width:6px;height:6px;border-radius:50%;background:var(--accent);
   animation:pulse 2s var(--ease) infinite;
+}
+.hero-author .by-cn{
+  font-family:var(--serif);font-weight:900;
+  color:var(--text);font-size:14px;letter-spacing:2px;
+  border-left:1px solid rgba(41,107,239,.25);padding-left:10px;
 }
 @keyframes pulse{
   0%,100%{opacity:1;transform:scale(1);}
   50%{opacity:.6;transform:scale(1.2);}
 }
-.byline .by-cn{font-family:var(--serif);font-weight:700;color:var(--text);font-size:13px;letter-spacing:2px;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<!-- ══ 作者署名 ══ -->
-<div class="byline r">
-  <span class="by-tag"><span class="by-dot"></span>AUTHOR · WINGSDLI</span>
-  <span class="by-cn">李颖</span>
-</div>
-
 <!-- ══ HERO ══ -->
 <div class="hero">
   <p class="eyebrow r">PERSONAL BUSINESS LOGIC · 2026 H1→H2 · WINGSDLI</p>
+  <div class="hero-author r">
+    <span class="by-tag"><span class="by-dot"></span>AUTHOR</span>
+    <span class="by-cn">WINGSDLI · 李颖</span>
+  </div>
   <h1 class="hero-title r d1">先帮商家<span class="hl">把生意做好</span>，广告才有<span class="hl2">真正的增量</span></h1>
   <div class="hero-body r d2">
     视频号已经拿到初步基本面，但持续增长靠的不是把别处资源平移——<strong>视频号的经营环境、用户心智和商业化工具与其他平台有本质差异</strong>。核心命题是：<strong>帮商家建立本地化经营能力</strong>，造出专属的营销和购买资源，让他们愿意投入专属组织精力——广告增量会随生意增长自然到来。
