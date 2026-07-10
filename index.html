@@ -108,19 +108,20 @@ a:hover{border-color:var(--accent);}
 .ai-note strong{color:var(--accent4);}
 
 /* 四力卡 */
-.four-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px;}
-.fc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:15px 14px;box-shadow:var(--sh);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s;}
+.four-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px;}
+.fc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 12px;box-shadow:var(--sh);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s;}
 .fc:hover{box-shadow:var(--sh2);transform:translateY(-2px);}
-.fc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.fc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
 .fc1::before{background:var(--accent);}.fc2::before{background:var(--accent4);}
 .fc3::before{background:var(--accent3);}.fc4::before{background:var(--accent2);}
-.fc-icon{font-size:20px;margin-bottom:7px;}
-.fc-name{font-family:var(--serif);font-size:18px;font-weight:900;margin-bottom:2px;}
+.fc-header{display:flex;align-items:baseline;gap:7px;margin-bottom:2px;}
+.fc-icon{font-size:16px;line-height:1;}
+.fc-name{font-family:var(--serif);font-size:16px;font-weight:900;line-height:1.2;}
 .fc1 .fc-name{color:var(--accent);}.fc2 .fc-name{color:var(--accent4);}
 .fc3 .fc-name{color:var(--accent3);}.fc4 .fc-name{color:var(--accent2);}
-.fc-verb{font-size:10px;letter-spacing:2px;font-weight:700;margin-bottom:9px;color:var(--dim);}
-.fc-view{font-size:10.5px;line-height:1.65;color:var(--muted);padding:8px 10px;border-radius:6px;margin-bottom:10px;background:rgba(0,0,0,.02);border-left:2px solid;}
-.fc-view b{font-weight:700;letter-spacing:1px;display:block;margin-bottom:3px;font-size:10px;}
+.fc-verb{font-size:9px;letter-spacing:1.5px;font-weight:700;margin-bottom:7px;color:var(--dim);}
+.fc-view{font-size:10.5px;line-height:1.6;color:var(--muted);padding:7px 9px;border-radius:5px;margin-bottom:8px;background:rgba(0,0,0,.02);border-left:2px solid;}
+.fc-view b{font-weight:700;letter-spacing:1px;display:block;margin-bottom:2px;font-size:10px;}
 .fc1 .fc-view{border-left-color:var(--accent);} .fc1 .fc-view b{color:var(--accent);}
 .fc2 .fc-view{border-left-color:var(--accent4);} .fc2 .fc-view b{color:var(--accent4);}
 .fc3 .fc-view{border-left-color:var(--accent3);} .fc3 .fc-view b{color:var(--accent3);}
@@ -309,8 +310,7 @@ a:hover{border-color:var(--accent);}
 
 <div class="four-grid r d3">
   <div class="fc fc1">
-    <div class="fc-icon">🛒</div>
-    <div class="fc-name">商品力</div>
+    <div class="fc-header"><span class="fc-icon">🛒</span><span class="fc-name">商品力</span></div>
     <div class="fc-verb">WHAT · 卖什么</div>
     <div class="fc-view"><b>预包装视角</b>围绕品类原料拓展的常青平销行业。需要输出人群痛点洞察支持细分品拓展，通过造节场景刺激用户心智。</div>
     <ul class="fc-items">
@@ -322,8 +322,7 @@ a:hover{border-color:var(--accent);}
     <div class="fc-prog p-ai">AI手搓工具 → 部分产品化</div>
   </div>
   <div class="fc fc2">
-    <div class="fc-icon">📹</div>
-    <div class="fc-name">内容力</div>
+    <div class="fc-header"><span class="fc-icon">📹</span><span class="fc-name">内容力</span></div>
     <div class="fc-verb">HOW TO SAY · 怎么说</div>
     <div class="fc-view"><b>预包装视角</b>以标品为主，但缺乏货架心智。要在短平快促销之外，找到能溢价的定位卖点进行充分展示。</div>
     <ul class="fc-items">
@@ -335,8 +334,7 @@ a:hover{border-color:var(--accent);}
     <div class="fc-prog p-done">已产品化 · Creative+ 持续迭代</div>
   </div>
   <div class="fc fc3">
-    <div class="fc-icon">🔗</div>
-    <div class="fc-name">经营力</div>
+    <div class="fc-header"><span class="fc-icon">🔗</span><span class="fc-name">经营力</span></div>
     <div class="fc-verb">HOW TO SELL · 怎么卖</div>
     <div class="fc-view"><b>预包装视角</b>向其他平台看齐，补齐经营抓手。作为有常青复购心智的品类，思考如何实现公私域 ROI 提升。</div>
     <ul class="fc-items">
@@ -348,8 +346,7 @@ a:hover{border-color:var(--accent);}
     <div class="fc-prog p-wip">产品化推进：经营号 · 如翼小店</div>
   </div>
   <div class="fc fc4">
-    <div class="fc-icon">🚀</div>
-    <div class="fc-name">投放力</div>
+    <div class="fc-header"><span class="fc-icon">🚀</span><span class="fc-name">投放力</span></div>
     <div class="fc-verb">HOW TO ACQUIRE · 怎么获客</div>
     <div class="fc-view"><b>预包装视角</b>把经营工具转化为广告解决方案，让经营抓手在投放侧真正兑现为收入增量。</div>
     <ul class="fc-items">
