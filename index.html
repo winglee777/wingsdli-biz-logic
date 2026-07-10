@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先帮商家把生意做好，广告才有增量 · 2026 H1→H2 · wingsdli</title>
+<link rel="preconnect" href="https://fonts.font.im">
+<link href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f5f7fc; --card:#fff; --card2:#eef2ff;
+  --dark:#0f1623;
+  --accent:#296bef; --accent2:#f59e0b; --accent3:#10b981; --accent4:#8b5cf6;
+  --text:#1a1f36; --muted:#64748b; --dim:#94a3b8; --border:#e2e8f0;
+  --ba:rgba(41,107,239,.18);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --sh:0 2px 10px rgba(0,0,0,.06); --sh2:0 4px 20px rgba(0,0,0,.09);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--ba);transition:border-color .2s;}
+a:hover{border-color:var(--accent);}
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px 80px;}
+.r{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.r.on{opacity:1;transform:none;}
+.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}.r.d4{transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){.r{transition:none;opacity:1;transform:none}}
+.div{height:1px;background:var(--border);margin:36px 0;}
+.lbl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px;}
+.ttl{font-family:var(--serif);font-size:26px;font-weight:900;color:var(--text);margin-bottom:5px;}
+.dsc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;}
+
+/* HERO */
+.hero{padding:44px 0 28px;border-bottom:2px solid var(--accent);}
+.eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:12px;}
+.hero-title{font-family:var(--serif);font-size:40px;font-weight:900;line-height:1.18;margin-bottom:14px;}
+.hero-title .hl{color:var(--accent);}.hero-title .hl2{color:var(--accent2);}
+.hero-body{font-size:13.5px;color:var(--muted);line-height:1.75;margin-bottom:18px;}
+.hero-body strong{color:var(--text);}
+.badges{display:flex;gap:7px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 11px;border-radius:20px;}
+.b-blue{background:rgba(41,107,239,.07);color:var(--accent);border:1px solid rgba(41,107,239,.2);}
+.b-amber{background:rgba(245,158,11,.07);color:#d97706;border:1px solid rgba(245,158,11,.2);}
+.b-green{background:rgba(16,185,129,.07);color:#059669;border:1px solid rgba(16,185,129,.2);}
+.b-purple{background:rgba(139,92,246,.07);color:#7c3aed;border:1px solid rgba(139,92,246,.2);}
+
+/* Mindset 对比 */
+.mindset{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px;box-shadow:var(--sh);}
+.ms{padding:22px 26px;}
+.ms.old{background:#fafafa;}
+.ms.new{background:rgba(41,107,239,.04);border-left:3px solid var(--accent);}
+.ms-phase{font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:8px;}
+.ms.old .ms-phase{color:var(--dim);}.ms.new .ms-phase{color:var(--accent);}
+.ms-title{font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:6px;}
+.ms.old .ms-title{color:var(--muted);}.ms.new .ms-title{color:var(--text);}
+.ms-body{font-size:12px;color:var(--muted);line-height:1.75;}
+.ms-body strong{color:var(--text);}
+
+/* 两条线 */
+.twotrack{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.track{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:var(--sh);position:relative;overflow:hidden;}
+.track::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.t1::before{background:linear-gradient(90deg,var(--accent),#93c5fd);}
+.t2::before{background:linear-gradient(90deg,var(--accent2),#fbbf24);}
+.track-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:7px;}
+.t1 .track-label{color:var(--accent);}.t2 .track-label{color:var(--accent2);}
+.track-title{font-family:var(--serif);font-size:18px;font-weight:900;color:var(--text);margin-bottom:5px;}
+.track-sub{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.6;}
+.track-items{list-style:none;}
+.track-items li{font-size:12px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:8px;line-height:1.6;}
+.track-items li:last-child{border-bottom:none;}
+.track-items li .dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+.t1 .track-items li .dot{background:var(--accent);}.t2 .track-items li .dot{background:var(--accent2);}
+.track-items li strong{color:var(--text);}
+
+/* 点状三段 */
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;}
+.seg{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 18px;box-shadow:var(--sh);position:relative;overflow:hidden;}
+.seg::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.s1::before{background:var(--accent);}.s2::before{background:var(--accent2);}.s3::before{background:var(--accent3);}
+.seg-tag{display:inline-flex;font-size:10px;font-weight:700;padding:3px 9px;border-radius:4px;margin-bottom:9px;}
+.s1 .seg-tag{background:rgba(41,107,239,.08);color:var(--accent);border:1px solid rgba(41,107,239,.2);}
+.s2 .seg-tag{background:rgba(245,158,11,.08);color:#d97706;border:1px solid rgba(245,158,11,.2);}
+.s3 .seg-tag{background:rgba(16,185,129,.08);color:#059669;border:1px solid rgba(16,185,129,.2);}
+.seg-title{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.seg-body{font-size:12px;color:var(--muted);line-height:1.75;}
+.seg-body strong{color:var(--text);}
+.seg-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;color:var(--accent);font-weight:600;margin-top:8px;border-bottom:none;}
+.seg-link::after{content:'→';}
+
+/* 进度条 */
+.progress-bar{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 22px;margin-bottom:12px;box-shadow:var(--sh);}
+.pb-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:14px;}
+.pb-flow{display:flex;align-items:center;}
+.pb-step{flex:1;text-align:center;position:relative;}
+.pb-step::after{content:'';position:absolute;top:14px;left:50%;right:-50%;height:2px;background:var(--border);z-index:0;}
+.pb-step:last-child::after{display:none;}
+.pb-dot{width:28px;height:28px;border-radius:50%;background:var(--bg);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;position:relative;z-index:1;font-size:11px;}
+.pb-step.done .pb-dot{background:var(--accent);border-color:var(--accent);color:#fff;}
+.pb-step.done::after{background:var(--accent);}
+.pb-step.active .pb-dot{background:#fff;border-color:var(--accent);color:var(--accent);font-weight:700;}
+.pb-name{font-size:11px;font-weight:600;color:var(--muted);}
+.pb-step.done .pb-name{color:var(--accent);}.pb-step.active .pb-name{color:var(--text);}
+
+/* AI注脚 */
+.ai-note{margin-top:10px;padding:10px 16px;background:rgba(139,92,246,.05);border:1px solid rgba(139,92,246,.15);border-radius:8px;font-size:11px;color:var(--muted);line-height:1.7;}
+.ai-note strong{color:var(--accent4);}
+
+/* 四力卡 */
+.four-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:14px;}
+.fc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 15px;box-shadow:var(--sh);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s;}
+.fc:hover{box-shadow:var(--sh2);transform:translateY(-2px);}
+.fc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.fc1::before{background:var(--accent);}.fc2::before{background:var(--accent4);}
+.fc3::before{background:var(--accent3);}.fc4::before{background:var(--accent2);}
+.fc-icon{font-size:20px;margin-bottom:7px;}
+.fc-name{font-family:var(--serif);font-size:18px;font-weight:900;margin-bottom:2px;}
+.fc1 .fc-name{color:var(--accent);}.fc2 .fc-name{color:var(--accent4);}
+.fc3 .fc-name{color:var(--accent3);}.fc4 .fc-name{color:var(--accent2);}
+.fc-verb{font-size:10px;letter-spacing:2px;font-weight:700;margin-bottom:9px;color:var(--dim);}
+.fc-items{list-style:none;flex:1;}
+.fc-items li{font-size:11px;color:var(--muted);padding:3px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:5px;line-height:1.5;}
+.fc-items li b{flex-shrink:0;font-weight:700;}
+.fc1 .fc-items li b{color:var(--accent);}.fc2 .fc-items li b{color:var(--accent4);}
+.fc3 .fc-items li b{color:var(--accent3);}.fc4 .fc-items li b{color:var(--accent2);}
+.fc-prog{margin-top:9px;padding:5px 7px;border-radius:6px;font-size:10px;font-weight:700;line-height:1.4;text-align:center;}
+.p-done{background:rgba(16,185,129,.08);color:#059669;border:1px solid rgba(16,185,129,.2);}
+.p-wip{background:rgba(245,158,11,.08);color:#d97706;border:1px solid rgba(245,158,11,.2);}
+.p-ai{background:rgba(41,107,239,.08);color:var(--accent);border:1px solid rgba(41,107,239,.2);}
+
+/* 组织力底座 */
+.org-bar{background:var(--dark);border-radius:14px;padding:20px 26px;display:flex;align-items:flex-start;gap:24px;}
+.org-left{flex-shrink:0;padding-top:2px;}
+.org-icon{font-size:22px;margin-bottom:3px;display:block;}
+.org-name{font-family:var(--serif);font-size:18px;font-weight:900;color:var(--accent2);}
+.org-verb{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.35);font-weight:700;margin-top:2px;}
+.org-right{flex:1;}
+.org-items{display:flex;gap:11px;flex-wrap:wrap;}
+.org-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:9px 13px;flex:1;min-width:150px;}
+.org-item-title{font-size:12px;font-weight:700;color:#fff;margin-bottom:3px;}
+.org-item-body{font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;}
+.org-item-body b{color:var(--accent2);}
+.org-note{margin-top:11px;font-size:11px;color:rgba(255,255,255,.38);line-height:1.7;padding-top:11px;border-top:1px solid rgba(255,255,255,.08);}
+.org-note b{color:rgba(255,255,255,.65);}
+
+/* KPI */
+.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px;}
+.kpi-section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:var(--sh);}
+.kpi-section-title{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.kpi-nums{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;}
+.kn{min-width:100px;}
+.kn-v{font-size:26px;font-weight:900;font-family:var(--serif);color:var(--accent2);line-height:1;margin-bottom:3px;}
+.kn-l{font-size:11px;color:var(--muted);line-height:1.4;}
+.kpi-links{display:flex;flex-direction:column;gap:6px;}
+.kpi-link-item{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text);font-weight:600;text-decoration:none;border-bottom:1px solid var(--border);transition:border-color .2s,background .2s;}
+.kpi-link-item:hover{background:rgba(41,107,239,.05);border-color:var(--ba);}
+
+/* H2 */
+.h2box{background:var(--card2);border:1px solid rgba(41,107,239,.2);border-radius:16px;padding:34px 38px;display:grid;grid-template-columns:3fr 2fr;gap:32px;position:relative;overflow:hidden;}
+.h2box::after{content:'H2';position:absolute;right:-8px;bottom:-28px;font-size:140px;font-family:var(--serif);font-weight:900;color:rgba(41,107,239,.05);pointer-events:none;line-height:1;}
+.h2-title{font-family:var(--serif);font-size:18px;font-weight:900;color:var(--text);margin-bottom:16px;}
+.h2-title span{color:var(--accent);}
+.hi{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start;}
+.hi-n{width:22px;height:22px;border-radius:50%;flex-shrink:0;background:rgba(41,107,239,.1);border:1px solid rgba(41,107,239,.25);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--accent);}
+.hi-t{font-size:12.5px;color:var(--muted);line-height:1.7;}
+.hi-t strong{color:var(--text);display:block;margin-bottom:1px;}
+.h2-right{display:flex;flex-direction:column;justify-content:center;gap:14px;}
+.h2-stmt{font-family:var(--serif);font-size:20px;font-weight:900;color:var(--text);line-height:1.55;}
+.h2-stmt span{color:var(--accent);}
+.h2-sub{font-size:12px;color:var(--muted);line-height:1.8;}
+.personal-note{background:rgba(139,92,246,.05);border:1px solid rgba(139,92,246,.15);border-radius:10px;padding:14px 18px;font-size:12px;color:var(--muted);line-height:1.8;}
+.personal-note strong{color:var(--accent4);}
+
+/* footer */
+.foot{border-top:1px solid var(--border);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.foot-name{font-family:var(--serif);font-size:13px;font-weight:700;color:var(--text);}
+.foot-name span{color:var(--accent);}
+.foot-meta{font-size:11px;color:var(--dim);letter-spacing:1px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <p class="eyebrow r">PERSONAL BUSINESS LOGIC · 2026 H1→H2 · WINGSDLI</p>
+  <h1 class="hero-title r d1">先帮商家<span class="hl">把生意做好</span>，广告才有<span class="hl2">真正的增量</span></h1>
+  <div class="hero-body r d2">
+    视频号已经拿到初步基本面，但持续增长靠的不是把别处资源平移——<strong>视频号的经营环境、用户心智和商业化工具与其他平台有本质差异</strong>。核心命题是：<strong>帮商家建立本地化经营能力</strong>，造出专属的营销和购买资源，让他们愿意投入专属组织精力——广告增量会随生意增长自然到来。
+  </div>
+  <div class="badges r d3">
+    <span class="badge b-blue">🕐 腾讯广告 5 年 · 深耕食品饮料行业</span>
+    <span class="badge b-purple">📈 私域 → 小程序 → 小店电商</span>
+    <span class="badge b-amber">⭐ 运营金手指奖</span>
+    <span class="badge b-green">🤖 AI 工具已落地 · 推进产品共创</span>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══ MINDSET 对比 ══ -->
+<div class="lbl r">MINDSET SHIFT · 核心命题</div>
+<h2 class="ttl r d1">如何让商家从「平移思维」走向「本地化投入」</h2>
+<div class="mindset r d2">
+  <div class="ms old">
+    <div class="ms-phase">上一阶段 · 入场逻辑</div>
+    <div class="ms-title">把其他平台的资源搬过来试试</div>
+    <div class="ms-body">内容照搬、人群照搬、投放策略照搬。能跑就跑，跑不动就换个出价。拿到了初步结果，但增长碰到天花板。</div>
+  </div>
+  <div class="ms new">
+    <div class="ms-phase">下一阶段 · 核心命题</div>
+    <div class="ms-title">本地化组织投入，造视频号专属增量</div>
+    <div class="ms-body">视频号有专属的人群心智、独特的社交场域、多路径的经营生态。<strong>需要从商家的组织架构、选品逻辑、内容策略到经营节奏全面本地化</strong>——从面到点，给一套完整解决方案。</div>
+  </div>
+</div>
+
+<!-- 面状 + 点状 -->
+<div class="twotrack r d3">
+  <div class="track t1">
+    <div class="track-label">面状 · 造氛围造趋势</div>
+    <div class="track-title">让客户「想在这里投」</div>
+    <div class="track-sub">创造视频号独有的营销节奏，让品牌主动把本地化投入列入战略</div>
+    <ul class="track-items">
+      <li><span class="dot"></span><strong><a href="https://winglee777.github.io/q3-category-trend/qingliang/" target="_blank">造节点</a></strong>——清凉节已上线，区别于618/双11，打造闭环电商专属增量窗口</li>
+      <li><span class="dot"></span><strong>渠道差异化宣讲</strong>——品牌私享会，让老板级认知视频号的本地化投入必要性</li>
+      <li><span class="dot"></span><strong>行业标杆输出</strong>——把跑通案例对外扩散，带动同行跟进</li>
+    </ul>
+  </div>
+  <div class="track t2">
+    <div class="track-label">点状 · 存量投客 · 分层服务</div>
+    <div class="track-title">让客户「会投、投出结果」</div>
+    <div class="track-sub">针对不同阶段客户，给有优先级的经营四力解决路径</div>
+    <ul class="track-items">
+      <li><span class="dot"></span><strong>存量头部客户</strong>——经营基础好，重点讲新客价值和全域 ROI，引导加大拉新预算</li>
+      <li><span class="dot"></span><strong>中腰尾潜力客户</strong>——生意规模还小，重点做品类教育全链路（认知→种草→追投）</li>
+      <li><span class="dot"></span><strong>全覆盖诊断方案</strong>——<a href="https://danniewowrich.github.io/biz-diagnosis-scale/" target="_blank">经营四力诊断工具</a>，让每个客户看到位置和调整方向</li>
+    </ul>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══ 经营四力（4+1）H1 进展 ══ -->
+<div class="lbl r">KNOW-HOW · H1 方法论实践进展</div>
+<h2 class="ttl r d1">经营四力在预包装行业的实践应用</h2>
+<p class="dsc r d1">从业务需求出发 → 方法论提炼 → AI 手搓工具验证 → 推动内部产品化。每一个工具都先验证方法论有效，才值得做。</p>
+
+<div class="progress-bar r d2">
+  <div class="pb-label">方法论演进路径 · 各力进度不同</div>
+  <div class="pb-flow">
+    <div class="pb-step done"><div class="pb-dot">✓</div><div class="pb-name">业务需求挖掘</div></div>
+    <div class="pb-step done"><div class="pb-dot">✓</div><div class="pb-name">方法论提炼</div></div>
+    <div class="pb-step active"><div class="pb-dot">▶</div><div class="pb-name">AI手搓工具</div></div>
+    <div class="pb-step"><div class="pb-dot">4</div><div class="pb-name">内部产品化</div></div>
+    <div class="pb-step"><div class="pb-dot">5</div><div class="pb-name">规模化覆盖</div></div>
+  </div>
+</div>
+<div class="ai-note r d2">
+  <strong style="font-size:13px;letter-spacing:1px;">AI 不是炫技，要从业务需求出发</strong><br>
+  每一个手搓工具，都是先在客户服务中验证方法论有效，再用 AI 提效和规模化——工具服务于业务判断，不是反过来。用 AI 解决真实的业务问题，而不是为了用 AI 而用 AI。
+</div>
+
+<div class="four-grid r d3">
+  <div class="fc fc1">
+    <div class="fc-icon">🛒</div>
+    <div class="fc-name">商品力</div>
+    <div class="fc-verb">WHAT · 卖什么</div>
+    <ul class="fc-items">
+      <li><b>›</b>造节·造趋势</li>
+      <li><b>›</b><a href="https://winglee777.github.io/q3-category-trend/" target="_blank">Q3品类趋势地图</a>（已上线）</li>
+      <li><b>›</b><a href="https://winglee777.github.io/food-category-insight/" target="_blank">开品洞察提示词工具</a></li>
+      <li><b>›</b><a href="https://winglee777.github.io/q3-category-trend/qingliang/" target="_blank">清凉节·节令品类地图</a>已落地</li>
+    </ul>
+    <div class="fc-prog p-ai">AI手搓工具 → 部分产品化</div>
+  </div>
+  <div class="fc fc2">
+    <div class="fc-icon">📹</div>
+    <div class="fc-name">内容力</div>
+    <div class="fc-verb">HOW TO SAY · 怎么说</div>
+    <ul class="fc-items">
+      <li><b>›</b>创作者矩阵 · 四步法 · 三级评估</li>
+      <li><b>›</b>修内功：本地化黄金脚本沉淀</li>
+      <li><b>›</b>借外力：达人三段式（互选→带货）</li>
+      <li><b>›</b>已通过 Creative+ 全面产品化承接</li>
+    </ul>
+    <div class="fc-prog p-done">已产品化 · Creative+ 持续迭代</div>
+  </div>
+  <div class="fc fc3">
+    <div class="fc-icon">🔗</div>
+    <div class="fc-name">经营力</div>
+    <div class="fc-verb">HOW TO SELL · 怎么卖</div>
+    <ul class="fc-items">
+      <li><b>›</b>活动·货架·节点三环经营</li>
+      <li><b>›</b>新客价值（<a href="https://danniewowrich.github.io/fengwei-pai-strategy/" target="_blank">锋味派</a>·验证中）</li>
+      <li><b>›</b><a href="https://danniewowrich.github.io/yinshan-oats-h2-report/" target="_blank">品类教育全链路</a>（阴山优麦·验证中）</li>
+      <li><b>›</b>公私域联动——H2 重点命题</li>
+    </ul>
+    <div class="fc-prog p-wip">产品化推进：经营号 · 如翼小店</div>
+  </div>
+  <div class="fc fc4">
+    <div class="fc-icon">🚀</div>
+    <div class="fc-name">投放力</div>
+    <div class="fc-verb">HOW TO ACQUIRE · 怎么获客</div>
+    <ul class="fc-items">
+      <li><b>›</b>素材量 · 智投占比 · 版位结构</li>
+      <li><b>›</b><a href="https://winglee777.github.io/product-explore-enable/" target="_blank">勤奋度体系课程</a>（行业覆盖）</li>
+      <li><b>›</b><a href="https://danniewowrich.github.io/biz-diagnosis-scale/" target="_blank">勤奋度诊断</a>：adata 工具已上线</li>
+      <li><b>›</b>商家自助查勤奋度（推进中）</li>
+    </ul>
+    <div class="fc-prog p-done">基本产品化 · 人工+AI+产品结合</div>
+  </div>
+</div>
+
+<!-- 组织力底座 -->
+<div class="org-bar r d4">
+  <div class="org-left">
+    <span class="org-icon">🏗️</span>
+    <div class="org-name">组织力</div>
+    <div class="org-verb">WHO · 谁来卖</div>
+  </div>
+  <div class="org-right">
+    <div class="org-items">
+      <div class="org-item">
+        <div class="org-item-title">矩阵三定</div>
+        <div class="org-item-body">定分工 · 定流量 · 定评估<br>让执行有人管、有资源、有标准</div>
+      </div>
+      <div class="org-item">
+        <div class="org-item-title">本地化团队配置</div>
+        <div class="org-item-body">日耗 <b>10万</b> 量级的视频号生意<br>内容侧起码需要 <b>5人</b> 专属配置</div>
+      </div>
+      <div class="org-item">
+        <div class="org-item-title">达人通道 + 用户分层</div>
+        <div class="org-item-body">达人合作路径设计<br>存量用户价值分层运营</div>
+      </div>
+    </div>
+    <div class="org-note" style="font-size:13px;color:rgba(255,255,255,.65);">
+      <b style="font-size:14px;color:#fff;">组织力是其他四力的底层支撑。</b>这类调整基于诊断与客户深度商讨，以结果为导向优化——是个性化建议，不是标准答案。
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══ H1 结果 ══ -->
+<div class="lbl r">RESULTS · H1 2026</div>
+<h2 class="ttl r d1">上半年跑出来的数字与影响</h2>
+
+<div class="kpi-grid r d2">
+  <div class="kpi-section">
+    <div class="kpi-section-title">业务结果</div>
+    <div class="kpi-nums">
+      <div class="kn"><div class="kn-v">187%+</div><div class="kn-l">预包装闭环日耗年同比<br>（峰值 320w/d）</div></div>
+      <div class="kn"><div class="kn-v">283%</div><div class="kn-l">品牌客户数增长</div></div>
+      <div class="kn"><div class="kn-v">63%</div><div class="kn-l">品牌闭环日耗增长</div></div>
+      <div class="kn"><div class="kn-v">+57%</div><div class="kn-l">整体商品跑出率提升<br>（7%→11%）</div></div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);padding-top:8px;border-top:1px solid var(--border);">
+      ＋ 2个预包装商家锁定好友周框架 · 推进3款产品落地应用 · 3个预包装商家完成好友日申请
+    </div>
+  </div>
+  <div class="kpi-section">
+    <div class="kpi-section-title">组织力影响 · 赋能商品消费品</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.75;margin-bottom:14px;">
+      将业务思考、方法论和工具系统化，对内赋能整个商品消费品团队。完成两次对团队的课程分享输出：
+    </div>
+    <div class="kpi-links">
+      <a class="kpi-link-item" href="https://winglee777.github.io/food-category-insight/" target="_blank">
+        📦 食品饮料赛道品类拓品洞察体系
+      </a>
+      <a class="kpi-link-item" href="https://winglee777.github.io/product-explore-enable/" target="_blank">
+        🚀 商品力拓品使能培训课程
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══ H2 ══ -->
+<div class="lbl r">H2 THINKING · 下半年两条主线</div>
+<div class="h2box r d1">
+  <div>
+    <div class="h2-title">业务主线：<span>方法论从 1 到 10 的复用</span></div>
+    <div class="hi">
+      <div class="hi-n">1</div>
+      <div class="hi-t">
+        <strong>以专项负责人身份，把方法论扩展到更多行业</strong>
+        经营四力在预包装已经跑通，H2 以专项负责人角色推动跨中心共建（食饮一中心+二中心），覆盖更多品牌客户——工具持续打磨，让方法论从一个行业复用到更大范围，实现业务增收
+      </div>
+    </div>
+    <div class="hi">
+      <div class="hi-n">2</div>
+      <div class="hi-t">
+        <strong>经营力 · 补齐公私域联动</strong>
+        H1 在公私域联动上投入还比较少，无论工具建设还是生态解决方案，都是 H2 的重点突破方向——从经营力诊断延伸到公域到私域的完整链路设计
+      </div>
+    </div>
+    <div class="hi">
+      <div class="hi-n">3</div>
+      <div class="hi-t">
+        <strong>推进经营力和商品力的产品化落地</strong>
+        联动经营平台、如意和产品团队共建，让手搓工具演进到规模化产品覆盖
+      </div>
+    </div>
+    <div style="height:12px;"></div>
+    <div class="h2-title" style="margin-top:4px;">组织主线：<span>组织影响力的建设</span></div>
+    <div class="hi">
+      <div class="hi-n">4</div>
+      <div class="hi-t">
+        <strong>向「销运一体」乃至「销运产一体」的复合角色演进</strong>
+        在跨中心共建和专项负责人工作中，向业务边界更宽的方向拓展，把运营经验与销售视角、产研协作打通，让自己的业务身份更复合、影响范围更大
+      </div>
+    </div>
+  </div>
+  <div class="h2-right">
+    <div class="h2-stmt">
+      H1 跑通了<span>自己的业务逻辑</span>，<br>H2 要让它<span>影响更多人</span>。
+    </div>
+    <div class="h2-sub" style="margin-bottom:14px;">
+      业务主线：方法论从 1 到 10 的复用<br>
+      组织主线：影响力从预包装向外延伸<br>
+      面状造氛围 · 点状追落地
+    </div>
+    <div class="personal-note">
+      <strong>关于个人成长：</strong>随着业务范围和协作边界的扩大，下半年我希望在「如何影响更大的盘子」这件事上真正成长——不只是做好一件事，而是学会在更大的协作网络里把事情推动起来。期待向身边的同事和老板们多学习，找到自己下一阶段的节奏。
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="foot r">
+  <div class="foot-name">李颖 · <span>wingsdli</span> · 食品饮料预包装运营 · 2026 H1→H2</div>
+  <div class="foot-meta">PERSONAL BUSINESS LOGIC · CONFIDENTIAL</div>
+</div>
+
+</div>
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on');});},{threshold:0.05});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
