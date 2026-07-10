@@ -183,10 +183,41 @@ a:hover{border-color:var(--accent);}
 .foot-name{font-family:var(--serif);font-size:13px;font-weight:700;color:var(--text);}
 .foot-name span{color:var(--accent);}
 .foot-meta{font-size:11px;color:var(--dim);letter-spacing:1px;}
+
+/* 顶部作者署名条 */
+.byline{
+  display:flex;align-items:center;justify-content:flex-end;gap:10px;
+  padding:16px 0 0;
+  font-size:11px;color:var(--dim);letter-spacing:2px;
+}
+.byline .by-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 12px;
+  background:linear-gradient(90deg,rgba(41,107,239,.06),rgba(139,92,246,.06));
+  border:1px solid rgba(41,107,239,.15);
+  border-radius:20px;
+  font-size:11px;font-weight:600;color:var(--accent);
+  letter-spacing:1px;
+}
+.byline .by-tag .by-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+  animation:pulse 2s var(--ease) infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:.6;transform:scale(1.2);}
+}
+.byline .by-cn{font-family:var(--serif);font-weight:700;color:var(--text);font-size:13px;letter-spacing:2px;}
 </style>
 </head>
 <body>
 <div class="wrap">
+
+<!-- ══ 作者署名 ══ -->
+<div class="byline r">
+  <span class="by-tag"><span class="by-dot"></span>AUTHOR · WINGSDLI</span>
+  <span class="by-cn">李颖</span>
+</div>
 
 <!-- ══ HERO ══ -->
 <div class="hero">
